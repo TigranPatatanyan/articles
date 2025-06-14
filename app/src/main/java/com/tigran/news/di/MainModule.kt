@@ -7,8 +7,8 @@ import com.tigran.domain.repo.SearchArticleRepository
 import com.tigran.domain.repo.TopArticleRepository
 import com.tigran.domain.usecase.GetTopArticleUseCase
 import com.tigran.domain.usecase.SearchArticleUseCase
-import com.tigran.news.ui.viewmodel.SearchArticleViewModel
 import com.tigran.news.ui.viewmodel.TopArticleViewModel
+import com.tigran.news.ui.viewmodel.SearchArticleViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -26,7 +26,9 @@ val mainModule = module {
     viewModel {
         TopArticleViewModel(get<GetTopArticleUseCase>())
     }
-    viewModel { SearchArticleViewModel(get<SearchArticleUseCase>()) }
+    viewModel {
+        SearchArticleViewModel(get<SearchArticleUseCase>())
+    }
     factory { GetTopArticleUseCase(get()) }
     factory { SearchArticleUseCase(get()) }
     single<TopArticleRepository> { TopArticleRepositoryImpl(get()) }

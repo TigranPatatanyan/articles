@@ -13,6 +13,9 @@ data class SearchResponseBody(
 )
 
 data class Doc(
+    @SerializedName("_id")
+    val id: String?,
+
     @SerializedName("headline")
     val headline: Headline?,
 

@@ -8,9 +8,10 @@ fun MostPopularDoc.toDomain(): Article {
     val imageUrl = media
         ?.firstOrNull()
         ?.metadata
-        ?.lastOrNull() // usually highest quality last
+        ?.lastOrNull()
 
     return Article(
+        id = id.orEmpty(),
         title = title.orEmpty(),
         snippet = abstractText.orEmpty(),
         imageUrl = imageUrl?.url,
@@ -23,6 +24,7 @@ fun Doc.toDomain(): Article {
     val imageUrl = multimedia?.thumbnail?.url ?: multimedia?.default?.url
 
     return Article(
+        id = id.orEmpty(),
         title = headline?.main.orEmpty(),
         snippet = snippet.orEmpty(),
         imageUrl = imageUrl,

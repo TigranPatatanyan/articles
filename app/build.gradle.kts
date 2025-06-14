@@ -66,6 +66,7 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.material3)
+    implementation(libs.coil.compose)
 
 
 

@@ -8,6 +8,9 @@ data class TopArticlesResponse(
 )
 
 data class MostPopularDoc(
+    @SerializedName("id")
+    val id: String?,
+
     @SerializedName("title")
     val title: String?,
 
